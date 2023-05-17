@@ -1,4 +1,4 @@
-import { prisma } from "../../../../prisma/globalPrismaClient";
+import { prisma } from "../../../../../prisma/globalPrismaClient";
 
 export async function GET() {
   const data = await prisma.user.findMany();
