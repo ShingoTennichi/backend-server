@@ -11,7 +11,14 @@ export default function Home() {
 
 async function getTest(url: string) {
   "use server"
-  const data = await fetch(url + "api/currency-notifier/get-users", { method: "GET", cache: "no-cache"});
+  const data = await fetch(url + "api/currency-notifier/get-users", {
+    method: "POST",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify("GET")
+  });
   const result = await data.json();
   console.log(result);
   return result;
