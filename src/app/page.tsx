@@ -9,7 +9,7 @@ export default function Home() {
   );
 }
 
-export async function getTest(url: string) {
+async function getTest(url: string) {
   "use server"
   const data = await fetch(url + "api/currency-notifier/get-users", { method: "GET", cache: "no-cache"});
   const result = await data.json();
