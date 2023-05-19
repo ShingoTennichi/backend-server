@@ -14,6 +14,7 @@ async function getTest(url: string) {
   const data = await fetch(url + "api/currency-notifier/get-users", { method: "GET", cache: "no-cache"});
   const result = await data.json();
   console.log(result);
+  return result;
 }
 
 async function createTest(url: string) {
