@@ -1,9 +1,6 @@
-import { getTest } from "@/components/getTest";
-export const fetchCache = 'force-no-store';
+import { prisma } from "../../../../../prisma/globalPrismaClient";
 
 export async function POST(request: Request, response: Response) {
-  const body = request.json();
-  console.log(body)
-  const data = await getTest();
+  const data = await prisma.user.findMany();
   return new Response(JSON.stringify({ data: data }));
 }
